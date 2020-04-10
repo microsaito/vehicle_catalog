@@ -3,6 +3,10 @@ Vehicle Catalog Application
 
 This project is based on: https://gitlab.com/snippets/1891831
 
+### Pending Checklist
+- [ ] Documentation
+- [ ] Show Brand and Model description when list vehicles
+
 It use:
 -Swagger
 -Eslint

@@ -1,4 +1,4 @@
-# Vehicle Catalog Api
+# Vehicle Catalog Api - Swagger, Eslint, Sequelize, Postgresql, Nodejs, Mocha
 Vehicle Catalog Application
 
 This project is based on: https://gitlab.com/snippets/1891831

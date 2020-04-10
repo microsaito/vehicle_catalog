@@ -8,15 +8,11 @@ This project is based on: https://gitlab.com/snippets/1891831
 - [ ] Show Brand and Model description when list vehicles
 
 It use:
--Swagger
--Eslint
--Sequelize
--PostgreSQL Database
--Nodejs
--Mocha
-
-
-
+*  Swagger
+*  Eslint
+*  PostgreSQL
+*  Nodejs
+*  Mocha
 
 Credits:
 

@@ -1,0 +1,635 @@
+{
+  "swagger":"2.0",
+  "securityDefinitions":{
+     "JWT":{
+        "type":"apiKey",
+        "in":"header",
+        "name":"Authorization"
+     }
+  },
+  "security":[
+     {
+        "JWT":[
+
+        ]
+     }
+  ],
+  "responses":{
+     "UnauthorizedError":{
+        "description":"Access token is missing or invalid"
+     }
+  },
+  "info":{
+     "version":"1.0.0",
+     "title":"API Laborit - API",
+     "description":"API Laborit - Car Catalog",
+     "license":{
+        "name":"MIT",
+        "url":"https://opensource.org/licenses/MIT"
+     }
+  },
+  "basePath":"/api",
+  "tags":[
+     {
+        "name":"Authentication",
+        "description":"Authentication"
+     },
+     {
+        "name":"Users",
+        "description":"Users"
+     },
+     {
+        "name":"Brands",
+        "description":"Brands"
+     },
+     {
+        "name":"Models",
+        "description":"Models"
+     },
+     {
+        "name":"Vehicles",
+        "description":"Vehicles"
+     }
+  ],
+  "schemes":[
+     "http"
+  ],
+  "consumes":[
+     "application/json"
+  ],
+  "produces":[
+     "application/json"
+  ],
+  "paths":{
+     "/authentication/authenticate":{
+        "post":{
+           "tags":[
+              "Authentication"
+           ],
+           "description":"Authenticate User",
+           "parameters":[
+              {
+                 "name":"dados",
+                 "in":"body",
+                 "description":"Info to Authenticate",
+                 "schema":{
+                    "$ref":"#/definitions/Login"
+                 }
+              }
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"Authenticated User",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        }
+     },
+     "/users":{
+        "post":{
+           "tags":[
+              "Users"
+           ],
+           "description":"Create Users",
+           "parameters":[
+              {
+                 "name":"dados",
+                 "in":"body",
+                 "description":"User Info",
+                 "schema":{
+                    "$ref":"#/definitions/User"
+                 }
+              }
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"Created User",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        },
+        "get":{
+           "tags":[
+              "Users"
+           ],
+           "description":"List Users",
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"User list",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        }
+     },
+     "/brands":{
+        "post":{
+           "tags":[
+              "Brands"
+           ],
+           "description":"Create Brands",
+           "parameters":[
+              {
+                 "name":"dados",
+                 "in":"body",
+                 "description":"User Info",
+                 "schema":{
+                    "$ref":"#/definitions/Brand"
+                 }
+              }
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"Created User",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        },
+        "get":{
+           "tags":[
+              "Brands"
+           ],
+           "description":"List Users",
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"User list",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        }
+     },
+     "/brands/{id}":{
+        "get":{
+           "parameters":[
+              {
+                 "name":"id",
+                 "in":"query",
+                 "required":true,
+                 "description":"User Info",
+                 "type":"string"
+              }
+           ],
+           "tags":[
+              "Brands"
+           ],
+           "description":"Get Brand By Id",
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"User list",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        },
+        "put":{
+           "tags":[
+              "Brands"
+           ],
+           "description":"Update Brands",
+           "parameters":[
+              {
+                 "name":"id",
+                 "in":"path",
+                 "description":"Brand Id",
+                 "type":"string",
+                 "required":true
+              },
+              {
+                 "name":"dados",
+                 "in":"body",
+                 "description":"Brand Info",
+                 "schema":{
+                    "$ref":"#/definitions/Brand"
+                 }
+              }
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"Created User",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        },
+        "delete":{
+           "tags":[
+              "Brands"
+           ],
+           "description":"Delete Brands",
+           "parameters":[
+              {
+                 "name":"id",
+                 "in":"path",
+                 "description":"Brand Id",
+                 "type":"string",
+                 "required":true
+              }
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"Created User",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        }
+     },
+     "/models":{
+        "post":{
+           "tags":[
+              "Models"
+           ],
+           "description":"Create Brands",
+           "parameters":[
+              {
+                 "name":"dados",
+                 "in":"body",
+                 "description":"User Info",
+                 "schema":{
+                    "$ref":"#/definitions/Brand"
+                 }
+              }
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"Created User",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        },
+        "get":{
+           "tags":[
+              "Models"
+           ],
+           "description":"List Users",
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"User list",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        }
+     },
+     "/models/{id}":{
+      "get":{
+         "parameters":[
+            {
+               "name":"id",
+               "in":"path",
+               "required":true,
+               "description":"Model Id",
+               "type":"string"
+            }
+         ],
+         "tags":[
+            "Models"
+         ],
+         "description":"Get Model By Id",
+         "produces":[
+            "application/json"
+         ],
+         "responses":{
+            "200":{
+               "description":"One item of Model",
+               "schema":{
+                  "$ref":"#/definitions/default"
+               }
+            }
+         }
+      },
+      "put":{
+         "tags":[
+            "Models"
+         ],
+         "description":"Update Model",
+         "parameters":[
+            {
+               "name":"id",
+               "in":"path",
+               "description":"Model Id",
+               "type":"string",
+               "required":true
+            },
+            {
+               "name":"data",
+               "in":"body",
+               "description":"Model Info",
+               "schema":{
+                  "$ref":"#/definitions/Brand"
+               }
+            }
+         ],
+         "produces":[
+            "application/json"
+         ],
+         "responses":{
+            "200":{
+               "description":"Created Model",
+               "schema":{
+                  "$ref":"#/definitions/default"
+               }
+            }
+         }
+      },
+      "delete":{
+         "tags":[
+            "Models"
+         ],
+         "description":"Delete Model",
+         "parameters":[
+            {
+               "name":"id",
+               "in":"path",
+               "description":"Brand Id",
+               "type":"string",
+               "required":true
+            }
+         ],
+         "produces":[
+            "application/json"
+         ],
+         "responses":{
+            "200":{
+               "description":"Success or Not",
+               "schema":{
+                  "$ref":"#/definitions/default"
+               }
+            }
+         }
+      }
+   },
+     "/vehicles":{
+        "get":{
+           "tags":[
+              "Vehicles"
+           ],
+           "description":"List Vehicles",
+           "summary":"Listagem dos Perfis",
+           "responses":{
+              "200":{
+                 "description":"OK",
+                 "schema":{
+                    "$ref":"#/definitions/default"
+                 }
+              }
+           }
+        },
+        "post":{
+           "tags":[
+              "Vehicles"
+           ],
+           "description":"Add Vehicle",
+           "parameters":[
+              {
+                 "name":"dados",
+                 "in":"body",
+                 "description":"Vehicle Info",
+                 "schema":{
+                    "$ref":"#/definitions/Vehicle"
+                 }
+              }
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "responses":{
+              "200":{
+                 "description":"Inserted Vehicle",
+                 "schema":{
+                    "$ref":"#/definitions/Vehicle"
+                 }
+              }
+           }
+        }
+     },
+     "/vehicles/{id}":{
+      "get":{
+         "parameters":[
+            {
+               "name":"id",
+               "in":"path",
+               "required":true,
+               "description":"Vehicles Id",
+               "type":"string"
+            }
+         ],
+         "tags":[
+            "Vehicles"
+         ],
+         "description":"Get Vehicle By Id",
+         "produces":[
+            "application/json"
+         ],
+         "responses":{
+            "200":{
+               "description":"One item of Vehicle",
+               "schema":{
+                  "$ref":"#/definitions/default"
+               }
+            }
+         }
+      },
+      "put":{
+         "tags":[
+            "Vehicles"
+         ],
+         "description":"Update Vehicle",
+         "parameters":[
+            {
+               "name":"id",
+               "in":"path",
+               "description":"Vehicle Id",
+               "type":"string",
+               "required":true
+            },
+            {
+               "name":"data",
+               "in":"body",
+               "description":"Vehicle Info",
+               "schema":{
+                  "$ref":"#/definitions/Vehicle"
+               }
+            }
+         ],
+         "produces":[
+            "application/json"
+         ],
+         "responses":{
+            "200":{
+               "description":"Updated Vehicle",
+               "schema":{
+                  "$ref":"#/definitions/default"
+               }
+            }
+         }
+      },
+      "delete":{
+         "tags":[
+            "Vehicles"
+         ],
+         "description":"Delete Vehicle",
+         "parameters":[
+            {
+               "name":"id",
+               "in":"path",
+               "description":"Vehicle Id",
+               "type":"string",
+               "required":true
+            }
+         ],
+         "produces":[
+            "application/json"
+         ],
+         "responses":{
+            "200":{
+               "description":"Success or Not",
+               "schema":{
+                  "$ref":"#/definitions/default"
+               }
+            }
+         }
+      }
+   }
+  },
+  "definitions":{
+     "default":{
+        "properties":{
+           "default":{
+              "type":"string",
+              "uniqueItems":true
+           }
+        },
+        "default":{
+           "default":"default"
+        }
+     },
+     "User":{
+        "properties":{
+           "login":{
+              "type":"string"
+           },
+           "password":{
+              "type":"string"
+           },
+           "firstName":{
+              "type":"string"
+           },
+           "lastName":{
+              "type":"string"
+           },
+           "role":{
+              "type":"string"
+           }
+        },
+        "example":{
+           "login":"jdias",
+           "password":"123456",
+           "firstName":"José",
+           "lastName":"Dias",
+           "role":"Admin"
+        }
+     },
+     "Login":{
+        "required":[
+           "login",
+           "senha"
+        ],
+        "properties":{
+           "login":{
+              "type":"string",
+              "uniqueItems":true
+           },
+           "senha":{
+              "type":"string",
+              "uniqueItems":true
+           }
+        },
+        "example":{
+           "login":"jdias",
+           "password":"123456"
+        }
+     },
+     "Brand":{
+        "properties":{
+           "name":{
+              "type":"string"
+           }
+        },
+        "example":{
+           "name":"Acura"
+        }
+     },
+     "Model":{
+        "properties":{
+           "name":{
+              "type":"string"
+           }
+        },
+        "example":{
+           "name":"Acura"
+        }
+     },
+     "Vehicle":{
+      "properties":{
+         "value":{ "type":"string" },
+         "brandId":{ "type":"string" },
+         "modelId":{ "type":"string" },
+         "yearModel":{ "type":"string" },
+         "fuel":{ "type":"string" }
+      },
+      "example":{
+         "value":"12",
+         "brandId": 1,
+         "modelId": 1,
+         "yearModel": 2001,
+         "fuel": "Gasolina"
+      }
+   }
+  }
+}

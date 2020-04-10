@@ -1,10 +1,13 @@
-# vehicle_catalog
+# Vehicle Catalog Api
 Vehicle Catalog Application
 
+This project is based on: https://gitlab.com/snippets/1891831
 
 
 
-Créditos:
+
+
+Credits:
 
 https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-syntax-with-node-and-express-68d3e11fe1ab/
 
